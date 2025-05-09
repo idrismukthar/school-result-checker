@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TLMPS - Student Result Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Section -->
+    <div class="login-container" id="loginSection">
+        <div class="login-box">
+            <img src="school-logo3.png" alt="School Logo" class="school-logo">
+            <h2>Student Result Portal</h2>
+            <form id="loginForm">
+                <input type="text" id="studentId" placeholder="Student ID" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Result Section -->
+    <div class="result-container" id="resultSection" style="display: none;">
+        <div class="result-header">
+            <div class="header-left">
+                <img src="school-logo3.png" alt="School Logo" class="header-logo">
+            </div>
+            <div class="header-center">
+                <h1>THE LEADERS MEMORIAL PRIVATE SCHOOL</h1>
+                <h2>B.E.C.E MOCK RESULTS 2024/2025 SESSION</h2>
+            </div>
+            <div class="header-right">
+                <img src="" alt="Student Photo" id="studentPhoto">
+              </div>              
+        </div>
+        
+        <p class="print-datetime" id="printDateTime"></p>
+
+        <div class="student-info">
+            <table class="info-table">
+                <tr>
+                    <td><strong>Name:</strong> <span id="studentName"></span></td>
+                    <td><strong>Class:</strong> <span id="studentClass"></span></td>
+                </tr>
+                <tr>
+                    <td><strong>Department:</strong> <span id="studentDept"> General</span></td>
+                    <td><strong>Student ID:</strong> <span id="displayStudentId"></span></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="academic-results">
+            <h3>Academic Performance</h3>
+            <table id="resultsTable">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Exam</th>
+                        <th>Grade</th>
+                        <th>Remarks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="comments-section">
+            <div class="teacher-comment">
+                <strong>Form Teacher's Comment:</strong>
+                <p id="teacherComment"></p>
+            </div>
+            <div class="principal-comment">
+                <strong>Principal's Comment:</strong>
+                <p id="principalComment"></p>
+            </div>
+        </div>
+
+        <div class="signature-line">
+            <div>____________________<br>Form Teacher's Signature</div>
+            <div>____________________<br>Principal's Signature</div>
+        </div>
+
+        <div class="stamp-section">
+            <div class="stamp-box">
+            <img src="img/stamp.png" alt="SCHOOL STAMP">    
+            </div>
+        </div>
+
+        <button id="downloadResult" class="download-btn">Download Result</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
