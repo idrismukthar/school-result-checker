@@ -262,14 +262,21 @@ document.getElementById("downloadResult").addEventListener("click", () => {
   // Get student name from the displayed result, assuming you show it somewhere
   const studentName =
     document.getElementById("studentName")?.textContent || "Student";
-
-  const options = {
-    margin: 0.5,
-    filename: studentName + " Result.pdf",
+  const opt = {
+    margin: [0.5, 0.5, 0.5, 0.5], // top, left, bottom, right
+    filename: studentName + "_Result.pdf",
     image: { type: "jpeg", quality: 0.98 },
-    html2canvas: { scale: 2 },
-    jsPDF: { unit: "in", format: "A4", orientation: "portrait" },
+    html2canvas: {
+      scale: 2,
+      useCORS: true,
+      scrollY: 0,
+    },
+    jsPDF: {
+      unit: "in",
+      format: "a4",
+      orientation: "portrait",
+    },
   };
 
-  html2pdf().set(options).from(element).save();
+  html2pdf().set(opt).from(document.getElementById("resultSection")).save();
 });
